@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Leeme</title>
+        <script type="text/javascript" src="./static/js/app.min.js"></script>
+        <link rel="stylesheet" href="./static/styles/app.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <h1>Leeme</h1>
+            <div class="content-main-character">
+                Letra principal:
+                <div class="custom-select" id="miSelect">
+                    <div class="custom-select-selected" id="mainCharacter">i</div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option" data-value="i">i</div>
+                        <div class="custom-select-option" data-value="u">u</div>
+                        <div class="custom-select-option" data-value="a">a</div>
+                        <div class="custom-select-option" data-value="e">e</div>
+                        <div class="custom-select-option" data-value="o">o</div>
+                        <div class="custom-select-option" data-value="p">p</div>
+                        <div class="custom-select-option" data-value="s">s</div>
+                        <div class="custom-select-option" data-value="m">m</div>
+                        <div class="custom-select-option" data-value="t">t</div>
+                        <div class="custom-select-option" data-value="c">c</div>
+                        <div class="custom-select-option" data-value="n">n</div>
+                        <div class="custom-select-option" data-value="l">l</div>
+                        <div class="custom-select-option" data-value="d">d</div>
+                        <div class="custom-select-option" data-value="r">r</div>
+                        <div class="custom-select-option" data-value="j">j</div>
+                        <div class="custom-select-option" data-value="b">b</div>
+                        <div class="custom-select-option" data-value="ñ">ñ</div>
+                        <div class="custom-select-option" data-value="v">v</div>
+                        <div class="custom-select-option" data-value="y">y</div>
+                        <div class="custom-select-option" data-value="f">f</div>
+                        <div class="custom-select-option" data-value="g">g</div>
+                        <div class="custom-select-option" data-value="h">h</div>
+                        <div class="custom-select-option" data-value="q">q</div>
+                        <div class="custom-select-option" data-value="z">z</div>
+                        <div class="custom-select-option" data-value="x">x</div>
+                        <div class="custom-select-option" data-value="k">k</div>
+                        <div class="custom-select-option" data-value="w">w</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-character">
+                <input type="checkbox" id="p">p</input>
+                <input type="checkbox" id="s">s</input>
+                <input type="checkbox" id="m">m</input>
+                <input type="checkbox" id="t">t</input>
+                <input type="checkbox" id="c">c</input>
+                <input type="checkbox" id="n">n</input>
+                <input type="checkbox" id="l">l</input>
+                <input type="checkbox" id="d">d</input>
+                <input type="checkbox" id="r">r</input>
+                <input type="checkbox" id="j">j</input>
+                <input type="checkbox" id="b">b</input>
+                <input type="checkbox" id="ñ">ñ</input>
+                <input type="checkbox" id="v">v</input>
+                <input type="checkbox" id="y">y</input>
+                <input type="checkbox" id="f">f</input>
+                <input type="checkbox" id="g">g</input>
+                <input type="checkbox" id="h">h</input>
+                <input type="checkbox" id="q">q</input>
+                <input type="checkbox" id="z">z</input>
+                <input type="checkbox" id="x">x</input>
+                <input type="checkbox" id="k">k</input>
+                <input type="checkbox" id="w">w</input>
+            </div>
+            <div class="content-buttons">
+                <button onclick="getWords()">Buscar</button>
+                <p id="count"></p>
+                <button onclick="next()">Siguiente</button>
+            </div>
+        </header>
+        <section>
+            <div class="content-word">
+                <p id="word"></p>
+                <a target="_blank" id="link">Significado</a>
+            </div>
+        </section>
+        <footer>
+            <div class="random-list" id="randomList">
+            </div>
+        </footer>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var selectContainer = document.getElementById("miSelect");
+            var selectedOption = selectContainer.querySelector(".custom-select-selected");
+            var optionsList = selectContainer.querySelector(".custom-select-options");
+    
+            selectContainer.addEventListener("click", function() {
+                if(optionsList.classList.contains("show")){
+                    optionsList.classList.remove("show");
+                }else{
+                    optionsList.classList.add("show");
+                }
+            });
+    
+            optionsList.addEventListener("click", function(e) {
+                if (e.target.classList.contains("custom-select-option")) {
+                    selectedOption.textContent = e.target.textContent;
+                }
+            });
+        });
+    </script>
+</html>

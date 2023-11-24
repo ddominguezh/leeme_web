@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  leeme:
+    platform: linux/amd64
+    build: .
+    volumes:
+      - .:/code
+    environment:
+      PYTHONPATH: .
+    ports:
+      - "5000:5000"
